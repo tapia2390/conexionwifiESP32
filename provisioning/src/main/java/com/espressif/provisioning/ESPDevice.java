@@ -17,6 +17,7 @@ package com.espressif.provisioning;
 import static java.lang.Thread.sleep;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -149,6 +150,7 @@ public class ESPDevice {
      * @param bluetoothDevice    BluetoothDevice
      * @param primaryServiceUuid Primary service UUID.
      */
+    @SuppressLint("MissingPermission")
     @RequiresPermission(Manifest.permission.BLUETOOTH)
     public void connectBLEDevice(BluetoothDevice bluetoothDevice, String primaryServiceUuid) {
 
@@ -568,6 +570,34 @@ public class ESPDevice {
      */
     public void provision(final String ssid, final String passphrase, final ProvisionListener provisionListener) {
 
+
+
+        ///mauricio aca esta elmetodo utilizado donde la respuesta es ok pero el resultado encryptado  clase es ESPDevice
+//va de la linea 577 a 597 inicio y fin
+                   // byte[] bytesHadware ="hola".getBytes(StandardCharsets.UTF_8);
+
+                    String bytesString ="hola";
+
+                    sendDataToCustomEndPoint("custom-data",bytesString.getBytes(),new ResponseListener(){
+                        @Override
+                        public void onSuccess(byte[] returnData) {
+                            byte[] decryptedData2 = security.decrypt(returnData);
+                            String s = new String(decryptedData2, StandardCharsets.US_ASCII);
+
+
+                            byte[] decryptedData = security.decrypt(returnData);
+                            Log.v("exitoso: ",s.toString());
+                        }
+
+                        @Override
+                        public void onFailure(Exception e) {
+                            Log.v("error device: ",e.getMessage().toString());
+                        }
+
+                    });
+
+
+
         this.provisionListener = provisionListener;
 
         if (session == null || !session.isEstablished()) {
@@ -812,7 +842,11 @@ public class ESPDevice {
 
                 //validamos que la conecion esta ok  /// applyWiFiConfig
                 if (status == Constants.Status.Success) {
+
                     applyWiFiConfig();
+
+
+
                 } else {
                     disableOnlyWifiNetwork();
                 }
