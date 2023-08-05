@@ -810,6 +810,7 @@ public class ESPDevice {
                     }
                 }
 
+                //validamos que la conecion esta ok  /// applyWiFiConfig
                 if (status == Constants.Status.Success) {
                     applyWiFiConfig();
                 } else {
