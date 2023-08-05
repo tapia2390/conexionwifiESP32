@@ -19,7 +19,7 @@ package com.espressif.provisioning;
  */
 public class ESPConstants {
 
-    public static final String CCCC = "192.168.4.1:80";
+    public static final String DEFAULT_WIFI_BASE_URL = "192.168.4.1:80";
 
     public enum TransportType {
         TRANSPORT_BLE,

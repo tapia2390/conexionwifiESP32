@@ -527,6 +527,12 @@ public class ESPDevice {
      * @param data     Data to be send.
      * @param listener Listener to get success and failure.
      */
+    //metodo para enviar informacion al hardaware
+    /*
+    * path=custom-data
+    *data=Hello
+    *
+    * */
     public void sendDataToCustomEndPoint(final String path, final byte[] data, final ResponseListener listener) {
 
         this.responseListener = listener;
