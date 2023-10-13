@@ -36,7 +36,7 @@
                 app:frameThickness="5dp"
                 app:maskColor="#77000000" />
 
-            <com.espressif.provisioning.CameraSourcePreview
+            <com.wit.provisioning.CameraSourcePreview
                 android:id="@+id/preview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
