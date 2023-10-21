@@ -47,6 +47,18 @@ android {
             buildConfigField "boolean", "isFilteringByPrefixAllowed", "true"
         }
     }
+
+    compileOptions {
+        // Support for Java 8 features
+       // coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
     namespace 'com.espressif.wifi_provisioning'
 }
 
