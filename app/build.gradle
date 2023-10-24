@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId 'com.wit.witsp32'
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 33
         versionCode 18
         versionName "2.1.2 - ${getGitHash()}"
@@ -112,6 +112,15 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.3.1'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+    //aws
+    implementation 'com.amazonaws:aws-android-sdk-auth-userpools:2.61.0'
+    implementation 'com.amazonaws:aws-android-sdk-auth-ui:2.61.0'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoauth:2.61.0'
+    implementation 'com.amplifyframework:aws-auth-cognito:2.0.0'
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.61.0'
+    implementation 'com.amazonaws:aws-android-sdk-appsync:2.6.+'
+    implementation 'com.amplifyframework:core:1.37.6'
 
 }
 apply plugin: 'com.google.gms.google-services'
