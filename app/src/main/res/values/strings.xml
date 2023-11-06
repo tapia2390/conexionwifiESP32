@@ -239,7 +239,6 @@
     <string name="txt_wifi_password">Wifi Password</string>
 
 
-
     <!--esptouch-->
     <string name="menu_item_about">About App</string>
     <string name="about_app_version">App Version: %s</string>
@@ -354,7 +353,6 @@
     <string name="detectedvalues">Detected values</string>
     <string name="seeActivity">See activity</string>
     <!-- new text app wit-->
-
 
 
 </resources>

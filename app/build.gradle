@@ -19,6 +19,7 @@ android {
         targetSdkVersion 33
         versionCode 18
         versionName "2.1.2 - ${getGitHash()}"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -105,6 +106,9 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.45'
 
 
+// calendario expandible
+    implementation 'com.github.shrikanth7698:Collapsible-Calendar-View-Android:v1.0.0'
+
 
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.airbnb.android:lottie:6.0.1'
@@ -112,6 +116,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.3.1'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+    implementation 'org.chromium.net:cronet-embedded:98.4758.101'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     //aws
     implementation 'com.amazonaws:aws-android-sdk-auth-userpools:2.61.0'
@@ -121,6 +128,8 @@ dependencies {
     implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.61.0'
     implementation 'com.amazonaws:aws-android-sdk-appsync:2.6.+'
     implementation 'com.amplifyframework:core:1.37.6'
+
+    implementation "androidx.multidex:multidex:2.0.1"
 
 }
 apply plugin: 'com.google.gms.google-services'
